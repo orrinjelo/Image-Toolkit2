@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DFCA9A8-0F4D-43B2-BEB8-144081E53CBB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImageToolkit</RootNamespace>
+    <AssemblyName>ImageToolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorRoutines\frmHSI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorRoutines\frmHSI.Designer.cs">
+      <DependentUpon>frmHSI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorRoutines\ImageLibrary.cs" />
+    <Compile Include="Debug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debug.Designer.cs">
+      <DependentUpon>Debug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FFTTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFTTool.Designer.cs">
+      <DependentUpon>FFTTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Form1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Fourier\CImage.cs" />
+    <Compile Include="Fourier\Complex.cs" />
+    <Compile Include="Fourier\ComplexArray.cs" />
+    <Compile Include="Fourier\ComplexF.cs" />
+    <Compile Include="Fourier\ComplexMath.cs" />
+    <Compile Include="Fourier\ComplexStats.cs" />
+    <Compile Include="Fourier\Fourier.cs" />
+    <Compile Include="Fourier\FourierDirection.cs" />
+    <Compile Include="Histogram\frmHistogram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Histogram\frmHistogram.Designer.cs">
+      <DependentUpon>frmHistogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HyperDrive\cHyperDrive.cs" />
+    <Compile Include="ExecutionStack.cs" />
+    <Compile Include="HyperDrive\frmHyperDriveTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HyperDrive\frmHyperDriveTest.Designer.cs">
+      <DependentUpon>frmHyperDriveTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\frmFFTFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operations\frmFFTFilter.Designer.cs">
+      <DependentUpon>frmFFTFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\OperationHSI.cs" />
+    <Compile Include="Operations\OperationsFFT.cs" />
+    <Compile Include="Operations\Filter.cs" />
+    <Compile Include="Operations\frmCrop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operations\frmCrop.Designer.cs">
+      <DependentUpon>frmCrop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\frmIntensity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operations\frmIntensity.Designer.cs">
+      <DependentUpon>frmIntensity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStandard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStandard.Designer.cs">
+      <DependentUpon>frmStandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HyperDrive\testOperation.cs" />
+    <Compile Include="Operations\frmRotate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operations\frmRotate.Designer.cs">
+      <DependentUpon>frmRotate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\frmScale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operations\frmScale.Designer.cs">
+      <DependentUpon>frmScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\IHyperOperation.cs" />
+    <Compile Include="Operations\IOperand.cs" />
+    <Compile Include="Operations\IOperation.cs" />
+    <Compile Include="Normalize.cs" />
+    <Compile Include="Operations\OperationRegistry.cs" />
+    <Compile Include="Operations\HyperOperationsMathSimple.cs" />
+    <Compile Include="Operations\OperationsMathSimple.cs" />
+    <Compile Include="Operations\OperationsMorph.cs" />
+    <Compile Include="Operations\OperationsSpaceDomainFilters.cs" />
+    <Compile Include="Operations\OperationsStatistical.cs" />
+    <Compile Include="Operations\OperationsTransformations.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ColorRoutines\frmHSI.resx">
+      <DependentUpon>frmHSI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debug.resx">
+      <DependentUpon>Debug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFTTool.resx">
+      <DependentUpon>FFTTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form11.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Histogram\frmHistogram.resx">
+      <DependentUpon>frmHistogram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HyperDrive\frmHyperDriveTest.resx">
+      <DependentUpon>frmHyperDriveTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\frmCrop.resx">
+      <DependentUpon>frmCrop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\frmFFTFilter.resx">
+      <DependentUpon>frmFFTFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\frmIntensity.resx">
+      <DependentUpon>frmIntensity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStandard.resx">
+      <DependentUpon>frmStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\frmRotate.resx">
+      <DependentUpon>frmRotate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\frmScale.resx">
+      <DependentUpon>frmScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\domocolor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grayscaledomo.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
