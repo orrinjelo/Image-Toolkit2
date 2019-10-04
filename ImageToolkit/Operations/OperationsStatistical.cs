@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ImageToolkit.Operations
 {
@@ -52,9 +49,9 @@ namespace ImageToolkit.Operations
 
             int size = sortedNums.Length;
             int mid = size / 2;
-            float median = (size % 2 != 0) ? (float)sortedNums[mid] : ((float)sortedNums[mid] + (float)sortedNums[mid - 1]) / 2;
+            float median = (size % 2 != 0) ? sortedNums[mid] : (sortedNums[mid] + sortedNums[mid - 1]) / 2;
             return median;
-           
+
         }
 
         public static float Alpha2(float[] sourceNumbers)
@@ -83,7 +80,7 @@ namespace ImageToolkit.Operations
             float[][][] omg = Normalize.ToFloat(x.GetBitmap());
             int H = x.GetBitmap().Height, W = x.GetBitmap().Width;
 
-            for (int c=0; c<3; c++)
+            for (int c = 0; c < 3; c++)
                 for (int h = 0; h < H; h++)
                 {
                     for (int w = 0; w < W; w++)
@@ -181,8 +178,14 @@ namespace ImageToolkit.Operations
                     }
                 }
 
-            if (spawn) x.CreateSibling(omg, "Median filter of " + ((frmStandard)x).GetBitmap().ToString());
-            else ((frmStandard)x).Image = Normalize.FromFloat(omg);
+            if (spawn)
+            {
+                x.CreateSibling(omg, "Median filter of " + ((FormStandard)x).GetBitmap().ToString());
+            }
+            else
+            {
+                ((FormStandard)x).Image = Normalize.FromFloat(omg);
+            }
         }
 
         public static void Min(IOperand x = null, bool spawn = true)
@@ -292,8 +295,8 @@ namespace ImageToolkit.Operations
                     }
                 }
 
-            if (spawn) x.CreateSibling(omg, "Minimum filter of " + ((frmStandard)x).GetBitmap().ToString());
-            else ((frmStandard)x).Image = Normalize.FromFloat(omg);
+            if (spawn) x.CreateSibling(omg, "Minimum filter of " + ((FormStandard)x).GetBitmap().ToString());
+            else ((FormStandard)x).Image = Normalize.FromFloat(omg);
         }
 
         public static void Max(IOperand x = null, bool spawn = true)
@@ -403,8 +406,8 @@ namespace ImageToolkit.Operations
                     }
                 }
 
-            if (spawn) x.CreateSibling(omg, "Maximum filter of " + ((frmStandard)x).GetBitmap().ToString());
-            else ((frmStandard)x).Image = Normalize.FromFloat(omg);
+            if (spawn) x.CreateSibling(omg, "Maximum filter of " + ((FormStandard)x).GetBitmap().ToString());
+            else ((FormStandard)x).Image = Normalize.FromFloat(omg);
         }
 
         public static void Midpoint(IOperand x = null, bool spawn = true)
@@ -430,7 +433,7 @@ namespace ImageToolkit.Operations
                                 for (int i = 0; i < 2; i++)
                                     for (int j = 0; j < 2; j++)
                                         n[count++] = img[c][h + j][w + i];
-                                omg[c][h][w] = (n.Min() + n.Max())/2f;
+                                omg[c][h][w] = (n.Min() + n.Max()) / 2f;
                             }
                             else if (w == W - 1)
                             {
@@ -514,8 +517,8 @@ namespace ImageToolkit.Operations
                     }
                 }
 
-            if (spawn) x.CreateSibling(omg, "Midpoint filter of " + ((frmStandard)x).GetBitmap().ToString());
-            else ((frmStandard)x).Image = Normalize.FromFloat(omg);
+            if (spawn) x.CreateSibling(omg, "Midpoint filter of " + ((FormStandard)x).GetBitmap().ToString());
+            else ((FormStandard)x).Image = Normalize.FromFloat(omg);
         }
 
         public static void AlphaTrim(IOperand x = null, bool spawn = true)
@@ -625,8 +628,8 @@ namespace ImageToolkit.Operations
                     }
                 }
 
-            if (spawn) x.CreateSibling(omg, "Alpha Trim (2) filter of " + ((frmStandard)x).GetBitmap().ToString());
-            else ((frmStandard)x).Image = Normalize.FromFloat(omg);
+            if (spawn) x.CreateSibling(omg, "Alpha Trim (2) filter of " + ((FormStandard)x).GetBitmap().ToString());
+            else ((FormStandard)x).Image = Normalize.FromFloat(omg);
         }
     }
 }

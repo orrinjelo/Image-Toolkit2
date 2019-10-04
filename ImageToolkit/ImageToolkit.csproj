@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorRoutines\frmHSI.cs">
+    <Compile Include="ColorRoutines\FormHSI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ColorRoutines\frmHSI.Designer.cs">
-      <DependentUpon>frmHSI.cs</DependentUpon>
+    <Compile Include="ColorRoutines\FormHSI.Designer.cs">
+      <DependentUpon>FormHSI.cs</DependentUpon>
     </Compile>
     <Compile Include="ColorRoutines\ImageLibrary.cs" />
     <Compile Include="Debug.cs">
@@ -81,65 +81,65 @@
     <Compile Include="Fourier\ComplexStats.cs" />
     <Compile Include="Fourier\Fourier.cs" />
     <Compile Include="Fourier\FourierDirection.cs" />
-    <Compile Include="Histogram\frmHistogram.cs">
+    <Compile Include="Histogram\FormHistogram.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Histogram\frmHistogram.Designer.cs">
-      <DependentUpon>frmHistogram.cs</DependentUpon>
+    <Compile Include="Histogram\FormHistogram.Designer.cs">
+      <DependentUpon>FormHistogram.cs</DependentUpon>
     </Compile>
-    <Compile Include="HyperDrive\cHyperDrive.cs" />
+    <Compile Include="HyperDrive\CHyperDrive.cs" />
     <Compile Include="ExecutionStack.cs" />
-    <Compile Include="HyperDrive\frmHyperDriveTest.cs">
+    <Compile Include="HyperDrive\FormHyperDriveTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HyperDrive\frmHyperDriveTest.Designer.cs">
-      <DependentUpon>frmHyperDriveTest.cs</DependentUpon>
+    <Compile Include="HyperDrive\FormHyperDriveTest.Designer.cs">
+      <DependentUpon>FormHyperDriveTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Operations\frmFFTFilter.cs">
+    <Compile Include="Operations\FormFFTFilter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Operations\frmFFTFilter.Designer.cs">
-      <DependentUpon>frmFFTFilter.cs</DependentUpon>
+    <Compile Include="Operations\FormFFTFilter.Designer.cs">
+      <DependentUpon>FormFFTFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="Operations\OperationHSI.cs" />
     <Compile Include="Operations\OperationsFFT.cs" />
     <Compile Include="Operations\Filter.cs" />
-    <Compile Include="Operations\frmCrop.cs">
+    <Compile Include="Operations\FormCrop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Operations\frmCrop.Designer.cs">
-      <DependentUpon>frmCrop.cs</DependentUpon>
+    <Compile Include="Operations\FormCrop.Designer.cs">
+      <DependentUpon>FormCrop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Operations\frmIntensity.cs">
+    <Compile Include="Operations\FormIntensity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Operations\frmIntensity.Designer.cs">
-      <DependentUpon>frmIntensity.cs</DependentUpon>
+    <Compile Include="Operations\FormIntensity.Designer.cs">
+      <DependentUpon>FormIntensity.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStandard.cs">
+    <Compile Include="FormStandard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStandard.Designer.cs">
-      <DependentUpon>frmStandard.cs</DependentUpon>
+    <Compile Include="FormStandard.Designer.cs">
+      <DependentUpon>FormStandard.cs</DependentUpon>
     </Compile>
-    <Compile Include="HyperDrive\testOperation.cs" />
-    <Compile Include="Operations\frmRotate.cs">
+    <Compile Include="HyperDrive\TestOperation.cs" />
+    <Compile Include="Operations\FormRotate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Operations\frmRotate.Designer.cs">
-      <DependentUpon>frmRotate.cs</DependentUpon>
+    <Compile Include="Operations\FormRotate.Designer.cs">
+      <DependentUpon>FormRotate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Operations\frmScale.cs">
+    <Compile Include="Operations\FormScale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Operations\frmScale.Designer.cs">
-      <DependentUpon>frmScale.cs</DependentUpon>
+    <Compile Include="Operations\FormScale.Designer.cs">
+      <DependentUpon>FormScale.cs</DependentUpon>
     </Compile>
     <Compile Include="Operations\IHyperOperation.cs" />
     <Compile Include="Operations\IOperand.cs" />
@@ -154,8 +154,8 @@
     <Compile Include="Operations\OperationsTransformations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ColorRoutines\frmHSI.resx">
-      <DependentUpon>frmHSI.cs</DependentUpon>
+    <EmbeddedResource Include="ColorRoutines\FormHSI.resx">
+      <DependentUpon>FormHSI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Debug.resx">
       <DependentUpon>Debug.cs</DependentUpon>
@@ -167,32 +167,32 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Form11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Histogram\frmHistogram.resx">
-      <DependentUpon>frmHistogram.cs</DependentUpon>
+    <EmbeddedResource Include="Histogram\FormHistogram.resx">
+      <DependentUpon>FormHistogram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HyperDrive\frmHyperDriveTest.resx">
-      <DependentUpon>frmHyperDriveTest.cs</DependentUpon>
+    <EmbeddedResource Include="HyperDrive\FormHyperDriveTest.resx">
+      <DependentUpon>FormHyperDriveTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Operations\frmCrop.resx">
-      <DependentUpon>frmCrop.cs</DependentUpon>
+    <EmbeddedResource Include="Operations\FormCrop.resx">
+      <DependentUpon>FormCrop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Operations\frmFFTFilter.resx">
-      <DependentUpon>frmFFTFilter.cs</DependentUpon>
+    <EmbeddedResource Include="Operations\FormFFTFilter.resx">
+      <DependentUpon>FormFFTFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Operations\frmIntensity.resx">
-      <DependentUpon>frmIntensity.cs</DependentUpon>
+    <EmbeddedResource Include="Operations\FormIntensity.resx">
+      <DependentUpon>FormIntensity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStandard.resx">
-      <DependentUpon>frmStandard.cs</DependentUpon>
+    <EmbeddedResource Include="FormStandard.resx">
+      <DependentUpon>FormStandard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Operations\frmRotate.resx">
-      <DependentUpon>frmRotate.cs</DependentUpon>
+    <EmbeddedResource Include="Operations\FormRotate.resx">
+      <DependentUpon>FormRotate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Operations\frmScale.resx">
-      <DependentUpon>frmScale.cs</DependentUpon>
+    <EmbeddedResource Include="Operations\FormScale.resx">
+      <DependentUpon>FormScale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

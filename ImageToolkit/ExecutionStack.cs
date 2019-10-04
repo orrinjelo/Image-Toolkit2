@@ -1,43 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ImageToolkit
 {
     public static class ExecutionStack
     {
-        public static frmMain mainForm;
+        public static FormMain mainForm;
         public static ListBox ls;
-     /*   public static ExecutionStack(frmMain m)
-        {
-            mainForm = m;
-            ls = mainForm.getStack();
-        } */
 
-        public static IOperand X
-        {
-            get
-            {
-                if (ls.Items.Count >= 1)
-                    return (IOperand)ls.Items[0];
-                else
-                    return null;
-            }
-        }
-        
-        public static IOperand Y
-        {
-            get
-            {
-                if (ls.Items.Count >= 2)
-                    return (IOperand)ls.Items[1];
-                else
-                    return null;
-            }
-        }
+        public static IOperand X =>
+            ls.Items.Count >= 1 ? (IOperand)ls.Items[0] : null;
+
+        public static IOperand Y =>
+            ls.Items.Count >= 2 ? (IOperand)ls.Items[1] : null;
 
         public static void Push(IOperand op)
         {
@@ -78,13 +52,14 @@ namespace ImageToolkit
         public static void Remove(IOperand op)
         {
             while (ls.Items.Contains(op))
+            {
                 ls.Items.Remove(op);
+            }
         }
 
         public static void RemoveAll()
         {
             ls.Items.Clear();
         }
-
     }
 }

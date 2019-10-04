@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ImageToolkit
@@ -12,17 +9,17 @@ namespace ImageToolkit
         /// The main entry point for the application.
         /// </summary>
 
-        public static frmMain main;
+        public static FormMain main;
 
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            main = new frmMain();
+            main = new FormMain();
             OperationsMathSimple.main = main;
             ExecutionStack.mainForm = main;
-            ExecutionStack.ls = main.getStack();
+            ExecutionStack.ls = main.GetStack();
             Application.Run(main);
         }
     }

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace ImageToolkit
 {
     public static class OperationsMathSimple
     {
-        public static frmMain main;
+        public static FormMain main;
         // The following describes and registers all operations contained in this module.
         public static void RegisterOperations()
         {
@@ -93,7 +88,7 @@ namespace ImageToolkit
             int minh = bmp.Height < bmp2.Height ? bmp.Height : bmp2.Height;
 
             float[][][] newimg = new float[Normalize.RGBPLANE_LENGTH][][];
-            for (int c = 0; c < Normalize.RGBPLANE_LENGTH;c++)
+            for (int c = 0; c < Normalize.RGBPLANE_LENGTH; c++)
             {
                 newimg[c] = new float[maxh][];
                 for (int h = 0; h < maxh; h++)
@@ -228,20 +223,20 @@ namespace ImageToolkit
         {
             IOperand x = ExecutionStack.X;
             if (x == null) return;
-            frmIntensity fi = new frmIntensity(x.GetBitmap());
+            FormIntensity fi = new FormIntensity(x.GetBitmap());
             fi.Show();
             return;
         }
 
-        public static void ChangeIntensity(IOperand x, bool spawn=true)
+        public static void ChangeIntensity(IOperand x, bool spawn = true)
         {
             if (x == null) return;
-            frmIntensity fi = new frmIntensity(x.GetBitmap(), x, spawn);
+            FormIntensity fi = new FormIntensity(x.GetBitmap(), x, spawn);
             fi.Show();
             return;
         }
 
-        public static void ChangeIntensity(float c = 0.0f, IOperand x=null, bool spawn=true)
+        public static void ChangeIntensity(float c = 0.0f, IOperand x = null, bool spawn = true)
         {
             if (x == null) x = ExecutionStack.X;
             if (x == null) return;
@@ -263,8 +258,8 @@ namespace ImageToolkit
             }
             MessageBox.Show("Here.");
             if (spawn) x.CreateSibling(img, "Intensity change of " + bmp.ToString());
-            else ((frmStandard)x).Image = Normalize.FromFloat(img);
+            else ((FormStandard)x).Image = Normalize.FromFloat(img);
         }
-        
+
     }
 }

@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
-
 
 namespace ImageToolkit
 {
@@ -31,6 +26,4 @@ namespace ImageToolkit
         Bitmap GetBitmap();
         IOperand CreateSibling(float[][][] sourceImage, String description);    // like a clone with new content
     }
-
-
 }
