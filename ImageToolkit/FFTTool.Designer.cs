@@ -65,7 +65,7 @@
             this.btnReal.TabIndex = 1;
             this.btnReal.Text = "Real";
             this.btnReal.UseVisualStyleBackColor = true;
-            this.btnReal.CheckedChanged += new System.EventHandler(this.btnReal_CheckedChanged);
+            this.btnReal.CheckedChanged += new System.EventHandler(this.BtnReal_CheckedChanged);
             // 
             // rbImag
             // 
@@ -76,7 +76,7 @@
             this.rbImag.TabIndex = 2;
             this.rbImag.Text = "Imaginary";
             this.rbImag.UseVisualStyleBackColor = true;
-            this.rbImag.CheckedChanged += new System.EventHandler(this.rbImag_CheckedChanged);
+            this.rbImag.CheckedChanged += new System.EventHandler(this.RbImag_CheckedChanged);
             // 
             // rbMagnitude
             // 
@@ -87,7 +87,7 @@
             this.rbMagnitude.TabIndex = 3;
             this.rbMagnitude.Text = "Magnitude (Z)";
             this.rbMagnitude.UseVisualStyleBackColor = true;
-            this.rbMagnitude.CheckedChanged += new System.EventHandler(this.rbMagnitude_CheckedChanged);
+            this.rbMagnitude.CheckedChanged += new System.EventHandler(this.RbMagnitude_CheckedChanged);
             // 
             // rbPhase
             // 
@@ -98,7 +98,7 @@
             this.rbPhase.TabIndex = 4;
             this.rbPhase.Text = "Phase (Phi)";
             this.rbPhase.UseVisualStyleBackColor = true;
-            this.rbPhase.CheckedChanged += new System.EventHandler(this.rbPhase_CheckedChanged);
+            this.rbPhase.CheckedChanged += new System.EventHandler(this.RbPhase_CheckedChanged);
             // 
             // comboBox1
             // 
@@ -141,7 +141,7 @@
             this.rbLogMagnitude.TabStop = true;
             this.rbLogMagnitude.Text = "Log Magnitude";
             this.rbLogMagnitude.UseVisualStyleBackColor = true;
-            this.rbLogMagnitude.CheckedChanged += new System.EventHandler(this.rbLogMagnitude_CheckedChanged);
+            this.rbLogMagnitude.CheckedChanged += new System.EventHandler(this.RbLogMagnitude_CheckedChanged);
             // 
             // rbLogImag
             // 
@@ -154,7 +154,7 @@
             this.rbLogImag.TabStop = true;
             this.rbLogImag.Text = "Log Imaginary";
             this.rbLogImag.UseVisualStyleBackColor = true;
-            this.rbLogImag.CheckedChanged += new System.EventHandler(this.rbLogImag_CheckedChanged);
+            this.rbLogImag.CheckedChanged += new System.EventHandler(this.RbLogImag_CheckedChanged);
             // 
             // rbLogReal
             // 
@@ -167,7 +167,7 @@
             this.rbLogReal.TabStop = true;
             this.rbLogReal.Text = "Log Real";
             this.rbLogReal.UseVisualStyleBackColor = true;
-            this.rbLogReal.CheckedChanged += new System.EventHandler(this.rbLogReal_CheckedChanged);
+            this.rbLogReal.CheckedChanged += new System.EventHandler(this.RbLogReal_CheckedChanged);
             // 
             // rbIFFT
             // 
@@ -179,7 +179,7 @@
             this.rbIFFT.TabStop = true;
             this.rbIFFT.Text = "Inverse FFT";
             this.rbIFFT.UseVisualStyleBackColor = true;
-            this.rbIFFT.CheckedChanged += new System.EventHandler(this.rbIFFT_CheckedChanged);
+            this.rbIFFT.CheckedChanged += new System.EventHandler(this.RbIFFT_CheckedChanged);
             // 
             // rbOriginal
             // 
@@ -192,7 +192,7 @@
             this.rbOriginal.TabStop = true;
             this.rbOriginal.Text = "Original";
             this.rbOriginal.UseVisualStyleBackColor = true;
-            this.rbOriginal.CheckedChanged += new System.EventHandler(this.rbOriginal_CheckedChanged);
+            this.rbOriginal.CheckedChanged += new System.EventHandler(this.RbOriginal_CheckedChanged);
             // 
             // label1
             // 

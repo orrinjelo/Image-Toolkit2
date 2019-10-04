@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Exocortex.DSP;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Exocortex.DSP;
 
 namespace ImageToolkit
 {
     public partial class FFTTool : Form
     {
-        private Bitmap bmp;
+        private readonly Bitmap bmp;
         private float[][][] img;
-        private Fourier.CImage cimg;
         private Fourier.CImage[] rimg = new Fourier.CImage[3];
-        private int NCOLORS = 3;
+        private readonly int NCOLORS = 3;
 
         public FFTTool()
         {
@@ -30,8 +23,7 @@ namespace ImageToolkit
         private void ResetImg()
         {
             img = Normalize.ToFloat(bmp);
-            cimg = new Fourier.CImage(bmp);
-            for (int i = 0; i < NCOLORS; i++ )
+            for (int i = 0; i < NCOLORS; i++)
                 rimg[i] = new Fourier.CImage(img[i], bmp.Height, bmp.Width);
 
         }
@@ -67,7 +59,7 @@ namespace ImageToolkit
                     data[c][i] *= scale;
                 }
             }
-            
+
             return rimg;
         }
 
@@ -93,24 +85,24 @@ namespace ImageToolkit
             return rimg;
         }
 
-        private void rbOriginal_CheckedChanged(object sender, EventArgs e)
+        private void RbOriginal_CheckedChanged(object sender, EventArgs e)
         {
             pictureBox1.Image = bmp;
         }
 
-        private void btnReal_CheckedChanged(object sender, EventArgs e)
+        private void BtnReal_CheckedChanged(object sender, EventArgs e)
         {
 
             if (!rimg[0].FrequencySpace)
                 rimg = FFT2D();
-            for (int c=0; c<3; c++)
+            for (int c = 0; c < 3; c++)
             {
                 img[c] = rimg[c].FromFloatReal();
             }
-            pictureBox1.Image = Normalize.FromFloat(img) ;
+            pictureBox1.Image = Normalize.FromFloat(img);
         }
 
-        private void rbImag_CheckedChanged(object sender, EventArgs e)
+        private void RbImag_CheckedChanged(object sender, EventArgs e)
         {
             for (int c = 0; c < 3; c++)
             {
@@ -119,7 +111,7 @@ namespace ImageToolkit
             pictureBox1.Image = Normalize.FromFloat(img);
         }
 
-        private void rbMagnitude_CheckedChanged(object sender, EventArgs e)
+        private void RbMagnitude_CheckedChanged(object sender, EventArgs e)
         {
             if (!rimg[0].FrequencySpace)
                 rimg = FFT2D();
@@ -130,7 +122,7 @@ namespace ImageToolkit
             pictureBox1.Image = Normalize.FromFloat(img);
         }
 
-        private void rbPhase_CheckedChanged(object sender, EventArgs e)
+        private void RbPhase_CheckedChanged(object sender, EventArgs e)
         {
             if (!rimg[0].FrequencySpace)
                 rimg = FFT2D();
@@ -141,7 +133,7 @@ namespace ImageToolkit
             pictureBox1.Image = Normalize.FromFloat(img);
         }
 
-        private void rbIFFT_CheckedChanged(object sender, EventArgs e)
+        private void RbIFFT_CheckedChanged(object sender, EventArgs e)
         {
             if (rimg[0].FrequencySpace)
                 rimg = IFFT2D();
@@ -153,17 +145,17 @@ namespace ImageToolkit
             //pictureBox1.Image = rimg[0].Magnitude();
         }
 
-        private void rbLogReal_CheckedChanged(object sender, EventArgs e)
+        private void RbLogReal_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void rbLogImag_CheckedChanged(object sender, EventArgs e)
+        private void RbLogImag_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void rbLogMagnitude_CheckedChanged(object sender, EventArgs e)
+        private void RbLogMagnitude_CheckedChanged(object sender, EventArgs e)
         {
 
         }

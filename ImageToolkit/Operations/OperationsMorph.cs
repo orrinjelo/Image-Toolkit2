@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -24,13 +20,13 @@ namespace ImageToolkit.Operations
             IOperand x = ExecutionStack.X;
             if (x == null) return;
             float[][][] img = Bin(x);
-            x.CreateSibling(img, "Binary image of " + ((frmStandard)x).Image.ToString());
+            x.CreateSibling(img, "Binary image of " + ((FormStandard)x).Image.ToString());
         }
 
         public static float[][][] Bin(IOperand x)
         {
             if (x == null) return null;
-            Bitmap bmp = ((frmStandard)x).Image;
+            Bitmap bmp = ((FormStandard)x).Image;
             float[][][] img = Normalize.ToFloat(bmp);
             img = Bin(img, bmp.Height, bmp.Width);
             return img;
@@ -50,13 +46,13 @@ namespace ImageToolkit.Operations
             IOperand x = ExecutionStack.X;
             if (x == null) return;
             float[][][] img = Erode(x);
-            x.CreateSibling(img, "Erosion image of " + ((frmStandard)x).Image.ToString());
+            x.CreateSibling(img, "Erosion image of " + ((FormStandard)x).Image.ToString());
         }
 
         public static float[][][] Erode(IOperand x)
         {
-            float[][][] img = Bin(Normalize.ToFloat(((frmStandard)x).Image), x.ImageHeight, x.ImageWidth);
-            return Erode(img, ((frmStandard)x).Image.Height, ((frmStandard)x).Image.Width);
+            float[][][] img = Bin(Normalize.ToFloat(((FormStandard)x).Image), x.ImageHeight, x.ImageWidth);
+            return Erode(img, ((FormStandard)x).Image.Height, ((FormStandard)x).Image.Width);
         }
 
         public static float[][][] Erode(float[][][] img, int H, int W)
@@ -93,7 +89,8 @@ namespace ImageToolkit.Operations
                         newimg[2][h][w] = (float)Math.Floor(sum / top);
                     }
                 }
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 MessageBox.Show("Exception: " + e.ToString());
             }
@@ -106,13 +103,13 @@ namespace ImageToolkit.Operations
             IOperand x = ExecutionStack.X;
             if (x == null) return;
             float[][][] img = Dilate(x);
-            x.CreateSibling(img, "Erosion image of " + ((frmStandard)x).Image.ToString());
+            x.CreateSibling(img, "Erosion image of " + ((FormStandard)x).Image.ToString());
         }
 
         public static float[][][] Dilate(IOperand x)
         {
-            float[][][] img = Bin(Normalize.ToFloat(((frmStandard)x).Image), x.ImageHeight, x.ImageWidth);
-            return Dilate(img, ((frmStandard)x).Image.Height, ((frmStandard)x).Image.Width);
+            float[][][] img = Bin(Normalize.ToFloat(((FormStandard)x).Image), x.ImageHeight, x.ImageWidth);
+            return Dilate(img, ((FormStandard)x).Image.Height, ((FormStandard)x).Image.Width);
         }
 
         public static float[][][] Dilate(float[][][] img, int H, int W)
@@ -128,7 +125,7 @@ namespace ImageToolkit.Operations
                 for (int w = 0; w < W; w++)
                 {
                     float sum = 0f;
-                   
+
                     for (int i = -1; i <= 1; i++)
                         for (int j = -1; j <= 1; j++)
                         {
@@ -147,7 +144,7 @@ namespace ImageToolkit.Operations
         {
             IOperand x = ExecutionStack.X;
             if (x == null) return;
-            Bitmap bmp = ((frmStandard)x).Image;
+            Bitmap bmp = ((FormStandard)x).Image;
 
             float[][][] img = Bin(x);
             img = Erode(img, bmp.Height, bmp.Width);
@@ -160,7 +157,7 @@ namespace ImageToolkit.Operations
         {
             IOperand x = ExecutionStack.X;
             if (x == null) return;
-            Bitmap bmp = ((frmStandard)x).Image;
+            Bitmap bmp = ((FormStandard)x).Image;
 
             float[][][] img = Bin(x);
             img = Dilate(img, bmp.Height, bmp.Width);

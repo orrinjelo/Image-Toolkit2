@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ImageToolkit
 {
     public class Operation : IOperation
     {
-        private Action F;
+        private readonly Action F;
         public Operation(string catagory, string name, string description, Action f, bool active)
         {
             Catagory = catagory;
@@ -36,8 +33,8 @@ namespace ImageToolkit
 
     public class HyperOperation : HyperDrive.IHyperOperation
     {
-        private Action F;
-        public HyperOperation(string catagory, string name, string description, Action f, bool active)
+        private readonly Action F;
+        public HyperOperation(string catagory, string name, string description, Action f)
         {
             Catagory = catagory;
             Name = name;
@@ -71,8 +68,7 @@ namespace ImageToolkit
             operations.Add(op);
         }
 
-
-        public static Operation Retrieve(string Name="",String Description="")
+        public static Operation Retrieve(string Name = "", String Description = "")
         {
             if (Name != "")
             {
@@ -88,8 +84,7 @@ namespace ImageToolkit
                     if (op.Description == Description) return op;
                 }
             }
-            return new Operation("None","Identity","",null,false);
+            return new Operation("None", "Identity", "", null, false);
         }
     }
-
 }

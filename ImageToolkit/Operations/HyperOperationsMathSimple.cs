@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
 
 namespace ImageToolkit
 {
     public static class HyperOperationsMathSimple
     {
-        public static frmMain main;
+        public static FormMain main;
         // The following describes and registers all operations contained in this module.
         public static void RegisterOperations()
         {
@@ -24,9 +19,9 @@ namespace ImageToolkit
 
         public static Action HyperWrapper(Action F)
         {
-            HyperOperation hop = new HyperOperation("Math Hyper Operations Simple", "Unknown", "Unknown", F, true);
-            HyperDrive.cHyperDrive.AddTask(hop);
-            return HyperDrive.cHyperDrive.Run;
+            HyperOperation hop = new HyperOperation("Math Hyper Operations Simple", "Unknown", "Unknown", F);
+            HyperDrive.CHyperDrive.AddTask(hop);
+            return HyperDrive.CHyperDrive.Run;
         }
 
         public static float[][][] ToGrayScale(float[][][] img, int W, int H)
@@ -53,7 +48,6 @@ namespace ImageToolkit
             if (x == null) return;
             Bitmap grayScale = x.GetBitmap();
             float[][][] img = Normalize.ToFloat(grayScale);
-            float[][][][] parts = new float[HyperDrive.cHyperDrive.Processors][][][];
 
             img = ToGrayScale(img, grayScale.Width, grayScale.Height);
 
@@ -93,11 +87,9 @@ namespace ImageToolkit
             float[][][] img2 = Normalize.ToFloat(bmp2);
             int maxw = bmp.Width > bmp2.Width ? bmp.Width : bmp2.Width;
             int maxh = bmp.Height > bmp2.Height ? bmp.Height : bmp2.Height;
-            int minw = bmp.Width < bmp2.Width ? bmp.Width : bmp2.Width;
-            int minh = bmp.Height < bmp2.Height ? bmp.Height : bmp2.Height;
 
             float[][][] newimg = new float[Normalize.RGBPLANE_LENGTH][][];
-            for (int c = 0; c < Normalize.RGBPLANE_LENGTH;c++)
+            for (int c = 0; c < Normalize.RGBPLANE_LENGTH; c++)
             {
                 newimg[c] = new float[maxh][];
                 for (int h = 0; h < maxh; h++)
@@ -106,7 +98,6 @@ namespace ImageToolkit
                     for (int w = 0; w < maxw; w++) newimg[c][h][w] = 0.0f;
                 }
             }
-
 
             for (int h = 0; h < bmp.Height; h++)
             {
@@ -153,7 +144,6 @@ namespace ImageToolkit
                     for (int w = 0; w < bmp.Width; w++) newimg[c][h][w] = 0.0f;
                 }
             }
-
 
             for (int h = 0; h < bmp.Height; h++)
             {
@@ -203,7 +193,6 @@ namespace ImageToolkit
                     for (int w = 0; w < maxw; w++) newimg[c][h][w] = 0.0f;
                 }
             }
-
 
             for (int h = 0; h < bmp.Height; h++)
             {
@@ -255,6 +244,6 @@ namespace ImageToolkit
             }
             x.CreateSibling(img, "Intensity change of " + bmp.ToString());
         }
-        
+
     }
 }
